@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryLight">#ff8d8f</color>
+    <color name="colorPrimary">@color/indianRed</color>
+    <color name="colorPrimaryDark">#962e38</color>
+    <color name="colorAccentLight">#a3a0d3</color>
+    <color name="colorAccent">@color/rhythm</color>
+    <color name="colorAccentDark">#464773</color>
+
+    <!--    BASIC COVER COLORS    -->
+    <color name="blackCoffee">#302223</color>
+    <color name="indianRed">#CB5D62</color>
+    <color name="rhythm">#7372A2</color>
+    <color name="cadetGrey">#8CA1BB</color>
+    <color name="platinum">#E9E3E6</color>
+
+    <!--    BASIC INSIDE COLORS   -->
+    <color name="twine">#C59B69</color>
+    <color name="asphalt">#1A0B09</color>
+    <color name="burntUmber">#843124</color>
+    <color name="muleFawn">#875228</color>
+</resources>
