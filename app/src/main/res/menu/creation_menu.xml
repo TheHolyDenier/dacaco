@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/creation_menu_homeworld"
+        android:enabled="true"
+        android:title="@string/homeworld"/>
+    <item
+        android:id="@+id/creation_menu_background"
+        android:enabled="true"
+        android:title="@string/background"/>
+    <item
+        android:id="@+id/creation_menu_role"
+        android:enabled="true"
+        android:title="@string/role"/>
+    <item
+        android:id="@+id/creation_menu_px"
+        android:enabled="true"
+        android:title="@string/px"/>
+</menu>

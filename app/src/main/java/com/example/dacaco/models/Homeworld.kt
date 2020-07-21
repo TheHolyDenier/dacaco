@@ -7,7 +7,6 @@ import com.example.dacaco.utils.Characteristic
 import com.example.dacaco.utils.Dice
 
 class Homeworld(
-    val id: Int,
     val title: Int,
     val description: Int?,
     val image: Int?,
@@ -20,12 +19,11 @@ class Homeworld(
     val backgrounds: List<Background>
 ) {
     companion object {
-        val FeralWorld = Homeworld(
-            0,
+        private val FeralWorld = Homeworld(
             R.string.feral_world,
             null,
             null,
-            74,
+            15,
             CharacteristicModifiers(
                 Characteristic.STRENGTH,
                 Characteristic.TOUGHNESS,
@@ -42,12 +40,11 @@ class Homeworld(
                 Background.OUTCAST
             )
         )
-        val ForgeWorld = Homeworld(
-            1,
+        private val ForgeWorld = Homeworld(
             R.string.forge_world,
             null,
             null,
-            59,
+            33,
             CharacteristicModifiers(
                 Characteristic.INTELLIGENCE, Characteristic.TOUGHNESS, Characteristic.FELLOWSHIP
             ),
@@ -63,12 +60,11 @@ class Homeworld(
             )
         )
 
-        val Highborn = Homeworld(
-            2,
+        private val Highborn = Homeworld(
             R.string.highborn,
             null,
             null,
-            100,
+            44,
             CharacteristicModifiers(
                 Characteristic.FELLOWSHIP,
                 Characteristic.INFLUENCE,
@@ -86,11 +82,10 @@ class Homeworld(
             )
         )
 
-        val HiveWorld = Homeworld(
-            3,
+        private val HiveWorld = Homeworld(
             R.string.hive_world,
             null, null,
-            41,
+            69,
             CharacteristicModifiers(
                 Characteristic.AGILITY, Characteristic.PERCEPTION, Characteristic.WILLPOWER
             ),
@@ -106,11 +101,10 @@ class Homeworld(
             )
         )
 
-        val ShrineWorld = Homeworld(
-            4,
+        private val ShrineWorld = Homeworld(
             R.string.shrine_world,
             null, null,
-            16,
+            85,
             CharacteristicModifiers(
                 Characteristic.FELLOWSHIP, Characteristic.WILLPOWER, Characteristic.PERCEPTION
             ),
@@ -125,5 +119,28 @@ class Homeworld(
                 Background.IMPERIAL_GUARD
             )
         )
+
+        private val VoidBorn = Homeworld(
+            R.string.voidborn,
+            null,
+            null,
+            100,
+            CharacteristicModifiers(
+                Characteristic.INTELLIGENCE, Characteristic.WILLPOWER, Characteristic.STRENGTH
+            ),
+            FateThreshold(3, 5),
+            HomeworldBonus(R.string.child_of_the_dark_title, R.string.child_of_the_dark_summary),
+            Aptitude.INTELLIGENCE,
+            Dice(1, 5, 7),
+            listOf(
+                Background.ADEPTUS_ASTRA_TELEPATHICA,
+                Background.ADEPTUS_MECHANICUS,
+                Background.ADEPTUS_MINISTORUM,
+                Background.OUTCAST
+            )
+        )
+
+        val worlds: List<Homeworld> =
+            listOf(FeralWorld, ForgeWorld, Highborn, HiveWorld, ShrineWorld, VoidBorn)
     }
 }

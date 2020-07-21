@@ -41,6 +41,14 @@
     <string name="shrine_world">Mundo Altar</string>
     <string name="faith_in_the_creed_title">Fe en el Credo</string>
     <string name="faith_in_the_creed_summary">Siempre que el personaje gasta un punto de Destino, tira 1d10. Con un resultado de 1, no se reduce el total de puntos de Destino del personaje.</string>
+    <string name="voidborn">Nacido en el Vacío</string>
+    <string name="child_of_the_dark_title">Hijo de la oscuridad</string>
+    <string name="child_of_the_dark_summary">El personaje obtiene el talento Imperturbable y gana un +30 a las tiradas de movimiento en un entorno de gravedad cero.</string>
+    <string name="title_new_character">Creación de personaje</string>
+    <string name="homeworld">Mundo de Origen</string>
+    <string name="background">Transfondo</string>
+    <string name="role">Rol</string>
+    <string name="px">Experiencia</string>
 
 
 </resources>

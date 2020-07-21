@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/vertical"
+    android:layout_marginTop="@dimen/vertical"
+    android:layout_marginStart="@dimen/horizontal"
+    android:layout_marginEnd="@dimen/horizontal"
+    tools:context=".views.NewCharacterActivity">
+
+    <TextView
+        style="@style/DarkHeresyTheme.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_new_character" />
+
+    <Button
+        android:id="@+id/new_char_homeworld_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/homeworld" />
+</LinearLayout>

@@ -1,11 +1,29 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="DarkHeresyTheme" parent="Theme.MaterialComponents.DayNight">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/asphalt</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorAccentDark</item>
+        <item name="colorOnSecondary">@color/platinum</item>
+        <item name="colorError">#F44336</item>
+        <item name="colorOnError">@color/platinum</item>
+        <item name="colorSurface">@color/platinum</item>
+        <item name="colorOnSurface">@color/asphalt</item>
+        <item name="android:colorBackground">@color/platinum</item>
+        <item name="colorOnBackground">@color/asphalt</item>
+
         <item name="android:fontFamily">@font/esteban</item>
+    </style>
+
+    <style name="DarkHeresyTheme.Title" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/requiem_regular</item>
+        <item name="android:textSize">48sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:autoSizeTextType">uniform</item>
     </style>
 
 </resources>
