@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">dacaco</string>
+
+    <!--  WORLD  -->
+    <string name="feral_world">Mundo salvaje</string>
+    <string name="forge_world">Mundo forja</string>
+    <string name="highborn">Noble cuna</string>
+    <string name="hive_world">Mundo Colmena</string>
+
+
+    <!--    CHARACTERISTICS -->
+    <string name="weapon_skill">Habilidad de armas (HA)</string>
+    <string name="ballistic_skill">Habilidad de proyectiles (HP)</string>
+    <string name="strength">Fuerza (F)</string>
+    <string name="toughness">Resistencia (R)</string>
+    <string name="agility">Agilidad (AG)</string>
+    <string name="intelligence">Inteligencia (INT)</string>
+    <string name="perception">Percepción (PER)</string>
+    <string name="willpower">Voluntad (V)</string>
+    <string name="fellowship">Empatía (EM)</string>
+    <string name="influence">Influencia (IFL)</string>
+
+    <!--    HOMEWORLD BONUSES -->
+    <string name="the_old_ways_title">Las viejas costumbres</string>
+    <string name="the_old_ways_summary">En manos del personaje, cualquier arma de baja tecnología pierde la propiedad Primitiva (si la tiene) y gana la propiedad Probada</string>
+    <string name="omnissiahs_chosen_title">Elegido del Omnissiah</string>
+    <string name="omnissiahs_chosen_summary">El personaje comienza con el talento Arma tecnológica o Toque mecánico</string>
+    <string name="breeding_counts_title">El linaje importa</string>
+    <string name="breeding_counts_summary">Cada vez que el personaje deba reducir su Influencia, la disminuye en 1 menos (hasta una reducción mínima de 1)</string>
+    <string name="teeming_masses_title">Incontables masas en montañas de metal</string>
+    <string name="teeming_masses_summary">El personaje ignora las multitudes con respecto al movimiento, tratándolas como terreno abierto. En espacios cerrados, obtiene un +20 a las tiradas de Navegación (Superficie).</string>
+
+    <!--     BACKGROUNDS -->
+    <string name="adeptus_administratum">Adeptus Administratum</string>
+    <string name="adeptus_arbites">Adeptus Arbites</string>
+    <string name="adeptus_mechanicus">Adeptus Mechanicus</string>
+    <string name="imperial_guard">Guardia Imperial</string>
+    <string name="adeptus_astra_telephatica">Adeptus Astra Telepathica</string>
+    <string name="outcast">Proscrito</string>
+    <string name="adeptus_ministorum">Adeptus Ministorum</string>
+    <string name="shrine_world">Mundo Altar</string>
+    <string name="faith_in_the_creed_title">Fe en el Credo</string>
+    <string name="faith_in_the_creed_summary">Siempre que el personaje gasta un punto de Destino, tira 1d10. Con un resultado de 1, no se reduce el total de puntos de Destino del personaje.</string>
+
+
 </resources>
