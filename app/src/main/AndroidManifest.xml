@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/DarkHeresyTheme">
-        <activity android:name=".views.CreationActivity"></activity>
-        <activity android:name=".views.NewCharacterActivity" />
+        <activity android:name=".views.creation.CreationActivity"
+            android:label="@string/title_new_character"
+            android:parentActivityName=".views.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.MainActivity" />
+        </activity>
         <activity android:name=".views.MainActivity" />
         <activity android:name=".views.SplashActivity">
             <intent-filter>

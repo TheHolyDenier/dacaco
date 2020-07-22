@@ -4,12 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.CreationActivity">
+    tools:context=".views.creation.CreationActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/creation_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar" />
+
+    <FrameLayout
+        android:id="@+id/creation_fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/creation_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/creation_menu"
-        android:layout_gravity="bottom"/>
+        android:layout_gravity="bottom"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/creation_menu" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

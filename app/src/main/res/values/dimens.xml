@@ -3,4 +3,5 @@
     <dimen name="horizontal">24dp</dimen>
     <dimen name="margin_fab">36dp</dimen>
     <dimen name="vertical">16dp</dimen>
+    <dimen name="app_bar">56dp</dimen>
 </resources>

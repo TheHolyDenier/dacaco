@@ -4,21 +4,25 @@
     <item
         android:id="@+id/creation_menu_homeworld"
         android:enabled="true"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_public_black_48dp"
         android:title="@string/homeworld"/>
     <item
         android:id="@+id/creation_menu_background"
         android:enabled="true"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_loyalty_black_48dp"
         android:title="@string/background"/>
     <item
         android:id="@+id/creation_menu_role"
         android:enabled="true"
         app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_work_black_48dp"
         android:title="@string/role"/>
     <item
         android:id="@+id/creation_menu_px"
         android:enabled="true"
         app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_assessment_black_48dp"
         android:title="@string/px"/>
 </menu>

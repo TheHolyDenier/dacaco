@@ -44,11 +44,15 @@
     <string name="voidborn">Nacido en el Vacío</string>
     <string name="child_of_the_dark_title">Hijo de la oscuridad</string>
     <string name="child_of_the_dark_summary">El personaje obtiene el talento Imperturbable y gana un +30 a las tiradas de movimiento en un entorno de gravedad cero.</string>
-    <string name="title_new_character">Creación de personaje</string>
-    <string name="homeworld">Mundo de Origen</string>
+
+    <!--  New character menu  -->
+    <string name="title_new_character">Nuevo personaje</string>
+    <string name="homeworld">Origen</string>
     <string name="background">Transfondo</string>
     <string name="role">Rol</string>
     <string name="px">Experiencia</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

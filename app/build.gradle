@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.dacaco"
-        minSdkVersion 26
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -38,7 +38,7 @@ dependencies {
 
 //    Material
     implementation 'com.google.android.material:material:1.1.0'
-
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
 
 }

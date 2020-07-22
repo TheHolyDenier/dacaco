@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".views.SplashActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/img_cover" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        app:srcCompat="@drawable/img_cover" />-->
 </LinearLayout>

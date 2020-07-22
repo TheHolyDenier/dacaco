@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="DarkHeresyTheme" parent="Theme.MaterialComponents.DayNight">
+    <style name="DarkHeresyTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
@@ -12,7 +12,7 @@
         <item name="colorOnError">@color/platinum</item>
         <item name="colorSurface">@color/platinum</item>
         <item name="colorOnSurface">@color/asphalt</item>
-        <item name="android:colorBackground">@color/platinum</item>
+        <item name="android:colorBackground">@color/cultured</item>
         <item name="colorOnBackground">@color/asphalt</item>
 
         <item name="android:fontFamily">@font/esteban</item>
@@ -25,5 +25,7 @@
         <item name="android:maxLines">1</item>
         <item name="android:autoSizeTextType">uniform</item>
     </style>
+
+
 
 </resources>

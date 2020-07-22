@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.dacaco.R
+import com.example.dacaco.views.creation.CreationActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         mFab = findViewById(R.id.main_fab)
-        mFab.setOnClickListener { startActivity(Intent(this@MainActivity, NewCharacterActivity::class.java)) }
+        mFab.setOnClickListener { startActivity(Intent(this@MainActivity, CreationActivity::class.java)) }
     }
 }
