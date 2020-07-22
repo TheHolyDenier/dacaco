@@ -53,6 +53,12 @@
     <string name="px">Experiencia</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="characteristic_modifiers">Modificadores de característica</string>
+    <string name="fate_threshold">Umbral de destino</string>
+    <string name="homeworld_bonus">Bonificaciones</string>
+    <string name="aptitude">Aptitud</string>
+    <string name="wounds">Heridas</string>
+    <string name="recomended_backgrounds">Trasfondos recomendados</string>
 
 
 </resources>

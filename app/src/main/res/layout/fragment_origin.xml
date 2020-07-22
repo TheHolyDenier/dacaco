@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/horizontal"
+    android:layout_marginTop="@dimen/vertical"
+    android:layout_marginEnd="@dimen/horizontal"
+    android:layout_marginBottom="@dimen/vertical"
     android:orientation="vertical"
     tools:context=".views.creation.fragments.OriginFragment">
 
@@ -23,18 +27,28 @@
                 android:id="@+id/origin_select_world_autocomplete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:cursorVisible="false"
                 android:focusable="false"
                 android:focusableInTouchMode="false"
-                android:inputType="none|textNoSuggestions"
-                android:cursorVisible="false" />
+                android:inputType="none|textNoSuggestions" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageButton
             android:id="@+id/origin_select_world_dice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/DarkHeresyTheme.Button.OutlinedButton"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
             android:layout_weight="0"
             android:src="@drawable/ic_casino_black_48dp" />
+
+        <ImageButton
+            android:id="@+id/origin_select_world_info"
+            style="@style/DarkHeresyTheme.Button.OutlinedButton"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_weight="0"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_info_black_48dp" />
     </LinearLayout>
 </LinearLayout>

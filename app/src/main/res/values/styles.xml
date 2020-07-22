@@ -26,6 +26,9 @@
         <item name="android:autoSizeTextType">uniform</item>
     </style>
 
+    <style name="DarkHeresyTheme.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:tint">@color/blackCoffee</item>
+    </style>
 
 
 </resources>
