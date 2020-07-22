@@ -1,5 +1,6 @@
 package com.example.dacaco.models
 
+import android.content.res.Resources
 import com.example.dacaco.R
 import com.example.dacaco.utils.Aptitude
 import com.example.dacaco.utils.Background
@@ -142,5 +143,9 @@ class Homeworld(
 
         val worlds: List<Homeworld> =
             listOf(FeralWorld, ForgeWorld, Highborn, HiveWorld, ShrineWorld, VoidBorn)
+    }
+
+    override fun toString(): String {
+        return title.toString()
     }
 }

@@ -17,6 +17,8 @@ class CreationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_creation)
 
+        loadFragment(OriginFragment())
+
         mBottomNavigationView = findViewById(R.id.creation_navigation)
         mBottomNavigationView.setOnNavigationItemSelectedListener { item ->
             val fragment: Fragment? = when (item.itemId) {

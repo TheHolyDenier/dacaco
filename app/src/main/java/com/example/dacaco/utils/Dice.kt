@@ -12,7 +12,7 @@ class Dice(val dices: Int, val diceSides: Int, val modifier: Int = 0, val sumIt:
 
 
     companion object {
-        fun throw1dN(diceSides: Int, modifier: Int): Int = (1..diceSides).random() + modifier
+        fun throw1dN(diceSides: Int, modifier: Int = 0): Int = (1..diceSides).random() + modifier
         fun throwIdN(dices: Int, diceSides: Int, modifier: Int = 0): MutableList<Int> {
             val list: MutableList<Int> = arrayListOf()
             for (j in 1..dices) {
