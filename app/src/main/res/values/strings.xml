@@ -51,14 +51,19 @@
     <string name="background">Transfondo</string>
     <string name="role">Rol</string>
     <string name="px">Experiencia</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="characteristic_modifiers">Modificadores de característica</string>
+
+
+    <string name="characteristic_modifiers">Modificadores</string>
     <string name="fate_threshold">Umbral de destino</string>
     <string name="homeworld_bonus">Bonificaciones</string>
     <string name="aptitude">Aptitud</string>
     <string name="wounds">Heridas</string>
     <string name="recomended_backgrounds">Trasfondos recomendados</string>
+    <string name="fate_threshold_values">%1$d (Bendición del Emperador %2$d+)</string>
+    <string name="homeworld_bonus_values">%1$s: %2$s</string>
+    <string name="wounds_values">%1$d+%2$dd%3$d</string>
+    <string name="feral_world_description">Son mundos que, por algún motivo, los colonos han degenerado social y tecnológicamente a un estado preindustrial. Esto es bastante amplio, y puede abarcar desde nativos involucionados que se encuentren en la Edad de Piedra, a habitantes que conozcan la pólvora negra y las máquinas de vapor. Una variante de los Mundos Ferales son los llamados Mundos Feudales, en los que sus habitantes conocen las armas primitivas de filo, el arco y la flecha, y poco más. La mayoría de los moradores de esos mundos viven en chozas de madera y sus gobernantes en castillos de piedra.</string>
+    <string name="characteristics">Características</string>
 
 
 </resources>

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:minWidth="280dp"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingStart="@dimen/horizontal"
@@ -16,86 +17,99 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/vertical"
-        android:layout_marginBottom="@dimen/vertical"
-        android:fontFamily="@font/requiem"
+        android:fontFamily="@font/morpheus"
         android:textSize="@dimen/title" />
 
     <TextView
-        android:id="@+id/dialog_body"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertical"
         android:text="@string/characteristic_modifiers"
+        android:textAlignment="center"
         android:textAllCaps="true"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/dialog_characteristic_modifiers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textAlignment="center" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertical"
         android:text="@string/fate_threshold"
+        android:textAlignment="center"
         android:textAllCaps="true"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/dialog_fate_threshold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertical"
         android:text="@string/homeworld_bonus"
+        android:textAlignment="center"
         android:textAllCaps="true"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/dialog_homeworld_bonus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertical"
         android:text="@string/aptitude"
+        android:textAlignment="center"
         android:textAllCaps="true"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/dialog_aptitude"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertical"
         android:text="@string/wounds"
+        android:textAlignment="center"
         android:textAllCaps="true"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/dialog_wounds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertical"
         android:text="@string/recomended_backgrounds"
+        android:textAlignment="center"
         android:textAllCaps="true"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/dialog_backgrounds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/dialog_btn"

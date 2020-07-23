@@ -19,8 +19,16 @@
     </style>
 
     <style name="DarkHeresyTheme.Title" parent="Widget.AppCompat.TextView">
-        <item name="android:fontFamily">@font/requiem_regular</item>
+        <item name="android:fontFamily">@font/morpheus_regular</item>
         <item name="android:textSize">48sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:autoSizeTextType">uniform</item>
+    </style>
+
+    <style name="DarkHeresyTheme.Title.2" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/morpheus_regular</item>
+        <item name="android:textSize">28sp</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:maxLines">1</item>
         <item name="android:autoSizeTextType">uniform</item>

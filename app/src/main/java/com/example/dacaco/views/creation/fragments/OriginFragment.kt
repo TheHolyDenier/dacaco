@@ -14,6 +14,7 @@ import com.example.dacaco.utils.Dice
 import com.example.dacaco.views.OriginDialogFragment
 import com.example.dacaco.views.creation.fragments.listeners.OriginClickListener
 
+
 class OriginFragment : Fragment() {
     private lateinit var mOriginAutoCompleteTextView: AutoCompleteTextView
     private lateinit var mOriginBtn: ImageButton
@@ -69,7 +70,11 @@ class OriginFragment : Fragment() {
         val args = Bundle()
         args.putInt("index", getOriginIndex())
         f.arguments = args
+
+
+
         f.show(fragmentManager, "dialog")
+
     }
 
     private fun getOriginIndex(): Int {

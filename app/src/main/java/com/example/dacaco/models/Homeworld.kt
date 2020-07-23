@@ -9,8 +9,6 @@ import com.example.dacaco.utils.Dice
 
 class Homeworld(
     val title: Int,
-    val description: Int?,
-    val image: Int?,
     val luck: Int,
     val characteristicModifiers: CharacteristicModifiers,
     val fateThreshold: FateThreshold,
@@ -22,8 +20,6 @@ class Homeworld(
     companion object {
         private val FeralWorld = Homeworld(
             R.string.feral_world,
-            null,
-            null,
             15,
             CharacteristicModifiers(
                 Characteristic.STRENGTH,
@@ -43,8 +39,6 @@ class Homeworld(
         )
         private val ForgeWorld = Homeworld(
             R.string.forge_world,
-            null,
-            null,
             33,
             CharacteristicModifiers(
                 Characteristic.INTELLIGENCE, Characteristic.TOUGHNESS, Characteristic.FELLOWSHIP
@@ -63,8 +57,6 @@ class Homeworld(
 
         private val Highborn = Homeworld(
             R.string.highborn,
-            null,
-            null,
             44,
             CharacteristicModifiers(
                 Characteristic.FELLOWSHIP,
@@ -85,7 +77,6 @@ class Homeworld(
 
         private val HiveWorld = Homeworld(
             R.string.hive_world,
-            null, null,
             69,
             CharacteristicModifiers(
                 Characteristic.AGILITY, Characteristic.PERCEPTION, Characteristic.WILLPOWER
@@ -104,7 +95,6 @@ class Homeworld(
 
         private val ShrineWorld = Homeworld(
             R.string.shrine_world,
-            null, null,
             85,
             CharacteristicModifiers(
                 Characteristic.FELLOWSHIP, Characteristic.WILLPOWER, Characteristic.PERCEPTION
@@ -123,8 +113,6 @@ class Homeworld(
 
         private val VoidBorn = Homeworld(
             R.string.voidborn,
-            null,
-            null,
             100,
             CharacteristicModifiers(
                 Characteristic.INTELLIGENCE, Characteristic.WILLPOWER, Characteristic.STRENGTH

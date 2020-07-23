@@ -10,10 +10,17 @@
     android:orientation="vertical"
     tools:context=".views.creation.fragments.OriginFragment">
 
+    <TextView
+        style="@style/DarkHeresyTheme.Title.2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/homeworld" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/vertical"
         android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -32,15 +39,8 @@
                 android:focusableInTouchMode="false"
                 android:inputType="none|textNoSuggestions" />
 
-        </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageButton
-            android:id="@+id/origin_select_world_dice"
-            style="@style/DarkHeresyTheme.Button.OutlinedButton"
-            android:layout_width="@dimen/icon_size"
-            android:layout_height="@dimen/icon_size"
-            android:layout_weight="0"
-            android:src="@drawable/ic_casino_black_48dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <ImageButton
             android:id="@+id/origin_select_world_info"
@@ -50,5 +50,61 @@
             android:layout_weight="0"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_info_black_48dp" />
+
+        <ImageButton
+            android:id="@+id/origin_select_world_dice"
+            style="@style/DarkHeresyTheme.Button.OutlinedButton"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_weight="0"
+            android:src="@drawable/ic_casino_black_48dp" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertical"
+        android:gravity="center_vertical">
+
+        <TextView
+            style="@style/DarkHeresyTheme.Title.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/characteristics" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Azar" />
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_columnWeight="1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_columnWeight="1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </GridLayout>
 </LinearLayout>
