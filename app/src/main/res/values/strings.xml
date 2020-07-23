@@ -64,6 +64,7 @@
     <string name="wounds_values">%1$d+%2$dd%3$d</string>
     <string name="feral_world_description">Son mundos que, por algún motivo, los colonos han degenerado social y tecnológicamente a un estado preindustrial. Esto es bastante amplio, y puede abarcar desde nativos involucionados que se encuentren en la Edad de Piedra, a habitantes que conozcan la pólvora negra y las máquinas de vapor. Una variante de los Mundos Ferales son los llamados Mundos Feudales, en los que sus habitantes conocen las armas primitivas de filo, el arco y la flecha, y poco más. La mayoría de los moradores de esos mundos viven en chozas de madera y sus gobernantes en castillos de piedra.</string>
     <string name="characteristics">Características</string>
+    <string name="restant_char_points">Gastados %1$d de %2d puntos.</string>
 
 
 </resources>

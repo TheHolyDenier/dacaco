@@ -34,9 +34,13 @@
         <item name="android:autoSizeTextType">uniform</item>
     </style>
 
-    <style name="DarkHeresyTheme.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <style name="DarkHeresyTheme.Button.OutlinedButton.Image" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:tint">@color/blackCoffee</item>
     </style>
 
+    <style name="DarkHeresyTheme.TextInputLayout.OutlinedBox.Dense" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <item name="prefixTextAppearance">@style/TextAppearance.AppCompat.Medium</item>
+    </style>
 
 </resources>

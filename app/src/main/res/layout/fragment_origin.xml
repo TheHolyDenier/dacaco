@@ -1,110 +1,408 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginStart="@dimen/horizontal"
-    android:layout_marginTop="@dimen/vertical"
-    android:layout_marginEnd="@dimen/horizontal"
-    android:layout_marginBottom="@dimen/vertical"
-    android:orientation="vertical"
     tools:context=".views.creation.fragments.OriginFragment">
 
-    <TextView
-        style="@style/DarkHeresyTheme.Title.2"
+    <data>
+        <import type="com.example.dacaco.utils.Dice"/>
+
+        <variable
+            name="world"
+            type="com.example.dacaco.models.Homeworld" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/homeworld" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="@dimen/vertical"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/origin_select_world"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <AutoCompleteTextView
-                android:id="@+id/origin_select_world_autocomplete"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:cursorVisible="false"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:inputType="none|textNoSuggestions" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <ImageButton
-            android:id="@+id/origin_select_world_info"
-            style="@style/DarkHeresyTheme.Button.OutlinedButton"
-            android:layout_width="@dimen/icon_size"
-            android:layout_height="@dimen/icon_size"
-            android:layout_weight="0"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_info_black_48dp" />
-
-        <ImageButton
-            android:id="@+id/origin_select_world_dice"
-            style="@style/DarkHeresyTheme.Button.OutlinedButton"
-            android:layout_width="@dimen/icon_size"
-            android:layout_height="@dimen/icon_size"
-            android:layout_weight="0"
-            android:src="@drawable/ic_casino_black_48dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/vertical"
-        android:gravity="center_vertical">
-
-        <TextView
-            style="@style/DarkHeresyTheme.Title.2"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/characteristics" />
+            android:layout_marginStart="@dimen/horizontal"
+            android:layout_marginTop="@dimen/vertical"
+            android:layout_marginEnd="@dimen/horizontal"
+            android:layout_marginBottom="@dimen/vertical"
+            android:orientation="vertical">
 
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Azar" />
-    </LinearLayout>
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnCount="2">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-
-            android:layout_columnWeight="1">
-
-            <com.google.android.material.textfield.TextInputEditText
+            <TextView
+                style="@style/DarkHeresyTheme.Title.2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="hint" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:text="@string/homeworld" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_columnWeight="1">
-
-            <com.google.android.material.textfield.TextInputEditText
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="hint" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </GridLayout>
-</LinearLayout>
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/origin_select_world"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/origin_select_world_autocomplete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="none|textNoSuggestions" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/origin_select_world_info"
+                    style="@style/DarkHeresyTheme.Button.OutlinedButton.Image"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_weight="0"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_info_black_48dp" />
+
+                <ImageButton
+                    android:id="@+id/origin_select_world_dice"
+                    style="@style/DarkHeresyTheme.Button.OutlinedButton.Image"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_weight="0"
+                    android:src="@drawable/ic_casino_black_48dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/origin_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{world != null ? View.VISIBLE : View.GONE}">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/vertical"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/DarkHeresyTheme.Title.2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/characteristics" />
+
+                    <ImageButton
+                        android:id="@+id/origin_characteristics_dice"
+                        style="@style/DarkHeresyTheme.Button.OutlinedButton.Image"
+                        android:layout_width="@dimen/icon_size"
+                        android:layout_height="@dimen/icon_size"
+                        android:layout_weight="0"
+                        android:src="@drawable/ic_casino_black_48dp"
+                        android:visibility="invisible" />
+
+                    <Switch
+                        android:id="@+id/origin_random_characteristics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Azar" />
+                </LinearLayout>
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/origin_char_weapon_skill_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/input_layout_outlined_dense"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:hint="@string/weapon_skill"
+                        app:prefixTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/origin_char_weapon_skill_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/origin_char_ballistic_skill_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/input_layout_outlined_dense"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:hint="@string/ballistic_skill"
+                        app:prefixTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/origin_char_ballistic_skill_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/origin_char_strength_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/input_layout_outlined_dense"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:hint="@string/strength"
+                        app:prefixTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/origin_char_strength_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/origin_char_toughness_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/input_layout_outlined_dense"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:hint="@string/toughness"
+                        app:prefixTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/origin_char_toughness_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/origin_char_agility_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/input_layout_outlined_dense"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:hint="@string/agility"
+                        app:prefixTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/origin_char_agility_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/origin_char_intelligence_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/input_layout_outlined_dense"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:hint="@string/intelligence"
+                        app:prefixTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/origin_char_intelligence_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/origin_char_perception_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/input_layout_outlined_dense"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:hint="@string/perception"
+                        app:prefixTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/origin_char_perception_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/origin_char_willpower_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/input_layout_outlined_dense"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:hint="@string/willpower"
+                        app:prefixTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/origin_char_willpower_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/origin_char_fellowship_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/input_layout_outlined_dense"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:hint="@string/fellowship"
+                        app:prefixTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/origin_char_fellowship_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/origin_char_influence_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/input_layout_outlined_dense"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="5dp"
+                        android:hint="@string/influence"
+                        app:prefixTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/origin_char_influence_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </GridLayout>
+
+                <TextView
+                    android:id="@+id/origin_characteristics_points"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/restant_char_points"
+                    android:textAlignment="textEnd" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/vertical"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/DarkHeresyTheme.Title.2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/fate_threshold" />
+
+                    <ImageButton
+                        android:id="@+id/origin_fate_threshold_dice"
+                        style="@style/DarkHeresyTheme.Button.OutlinedButton.Image"
+                        android:layout_width="42dp"
+                        android:layout_height="@dimen/icon_size"
+                        android:layout_weight="0"
+                        android:src="@drawable/ic_casino_black_48dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/vertical"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/DarkHeresyTheme.Title.2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/homeworld_bonus" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/homeworld_bonus_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textFontWeight="700"
+                    android:text='@{world.homeworldBonus.title != 0 ? context.getString(world.homeworldBonus.title) : ""}' />
+
+                <TextView
+                    android:id="@+id/homeworld_bonus_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{world.homeworldBonus.summary != 0 ? context.getString(world.homeworldBonus.summary) : ""}' />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/vertical"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/DarkHeresyTheme.Title.2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/wounds" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/vertical"
+                    android:layout_marginBottom="@dimen/vertical"
+                    android:gravity="center_vertical">
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/origin_wounds_input_layout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/input_layout_outlined_dense"
+                            android:layout_margin="5dp"
+                            android:hint="@string/wounds"
+                            app:prefixText='@{world != null ? world.wounds.modifier + " + " : ""}'
+                            app:prefixTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/origin_wounds_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:inputType="number" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </FrameLayout>
+
+                    <ImageButton
+                        android:id="@+id/origin_wounds_dice"
+                        style="@style/DarkHeresyTheme.Button.OutlinedButton.Image"
+                        android:layout_width="42dp"
+                        android:layout_height="@dimen/icon_size"
+                        android:layout_weight="0"
+                        android:src="@drawable/ic_casino_black_48dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

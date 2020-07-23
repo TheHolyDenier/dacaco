@@ -6,4 +6,5 @@
     <dimen name="app_bar">56dp</dimen>
     <dimen name="icon_size">48dp</dimen>
     <dimen name="title">28sp</dimen>
+    <dimen name="input_layout_outlined_dense">56dp</dimen>
 </resources>
