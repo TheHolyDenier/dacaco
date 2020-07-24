@@ -29,6 +29,10 @@
     <string name="breeding_counts_summary">Cada vez que el personaje deba reducir su Influencia, la disminuye en 1 menos (hasta una reducción mínima de 1)</string>
     <string name="teeming_masses_title">Incontables masas en montañas de metal</string>
     <string name="teeming_masses_summary">El personaje ignora las multitudes con respecto al movimiento, tratándolas como terreno abierto. En espacios cerrados, obtiene un +20 a las tiradas de Navegación (Superficie).</string>
+    <string name="faith_in_the_creed_title">Fe en el Credo</string>
+    <string name="faith_in_the_creed_summary">Siempre que el personaje gasta un punto de Destino, tira 1d10. Con un resultado de 1, no se reduce el total de puntos de Destino del personaje.</string>
+    <string name="child_of_the_dark_title">Hijo de la oscuridad</string>
+    <string name="child_of_the_dark_summary">El personaje obtiene el talento Imperturbable y gana un +30 a las tiradas de movimiento en un entorno de gravedad cero.</string>
 
     <!--     BACKGROUNDS -->
     <string name="adeptus_administratum">Adeptus Administratum</string>
@@ -39,11 +43,7 @@
     <string name="outcast">Proscrito</string>
     <string name="adeptus_ministorum">Adeptus Ministorum</string>
     <string name="shrine_world">Mundo Altar</string>
-    <string name="faith_in_the_creed_title">Fe en el Credo</string>
-    <string name="faith_in_the_creed_summary">Siempre que el personaje gasta un punto de Destino, tira 1d10. Con un resultado de 1, no se reduce el total de puntos de Destino del personaje.</string>
     <string name="voidborn">Nacido en el Vacío</string>
-    <string name="child_of_the_dark_title">Hijo de la oscuridad</string>
-    <string name="child_of_the_dark_summary">El personaje obtiene el talento Imperturbable y gana un +30 a las tiradas de movimiento en un entorno de gravedad cero.</string>
 
     <!--  New character menu  -->
     <string name="title_new_character">Nuevo personaje</string>
@@ -64,7 +64,10 @@
     <string name="wounds_values">%1$d+%2$dd%3$d</string>
     <string name="feral_world_description">Son mundos que, por algún motivo, los colonos han degenerado social y tecnológicamente a un estado preindustrial. Esto es bastante amplio, y puede abarcar desde nativos involucionados que se encuentren en la Edad de Piedra, a habitantes que conozcan la pólvora negra y las máquinas de vapor. Una variante de los Mundos Ferales son los llamados Mundos Feudales, en los que sus habitantes conocen las armas primitivas de filo, el arco y la flecha, y poco más. La mayoría de los moradores de esos mundos viven en chozas de madera y sus gobernantes en castillos de piedra.</string>
     <string name="characteristics">Características</string>
-    <string name="restant_char_points">Gastados %1$d de %2d puntos.</string>
+    <string name="restant_char_points">Gastados %1$d de %2$d puntos.</string>
 
-
+    <!--  TALENTS  -->
+    <string name="strong_minded">Imperturbable</string>
+    <string name="technical_knock">Toque mecánico</string>
+    <string name="weapon_tech">Arma tecnológica</string>
 </resources>

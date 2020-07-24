@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.view.children
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.dacaco.R
@@ -13,13 +14,15 @@ import com.example.dacaco.databinding.FragmentOriginBinding
 import com.example.dacaco.models.Homeworld
 import com.example.dacaco.utils.Dice
 import com.example.dacaco.views.OriginDialogFragment
+import com.example.dacaco.views.creation.fragments.listeners.HomeworldTextWatcher
+import com.google.android.material.textfield.TextInputLayout
 
 
 class OriginFragment : Fragment() {
 
     private lateinit var binding: FragmentOriginBinding
     private lateinit var items: List<String>
-    private var world: Homeworld = Homeworld.worlds[0]
+    private var charBaseValue: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,12 +44,73 @@ class OriginFragment : Fragment() {
         binding.originSelectWorldInfo.setOnClickListener { openDialogHomeworldInfo() }
         binding.originRandomCharacteristics.setOnClickListener { showHideRandomCharacteristics() }
         binding.originWoundsDice.setOnClickListener { setRandomWounds() }
+        binding.originCharacteristicsDice.setOnClickListener { throwDices() }
+        binding.originSelectWorldAutocomplete.addTextChangedListener(HomeworldTextWatcher(this))
+        binding.originWoundsInput.addTextChangedListener(HomeworldTextWatcher(this))
+
+        setTextWatchCharacters()
+    }
+
+    private fun setTextWatchCharacters() {
+        for (textInputLayout in binding.originCharLayout.children) {
+            if (textInputLayout is TextInputLayout) {
+                textInputLayout.editText?.addTextChangedListener(HomeworldTextWatcher(this))
+
+            }
+        }
+    }
+
+    fun updateSuffix() {
+        var totalPoints = 0
+        for (textInputLayout in binding.originCharLayout.children) {
+            if (textInputLayout is TextInputLayout) {
+                val prefix = textInputLayout.prefixText.toString().split(' ')[0].toInt()
+                val value =
+                    if (textInputLayout.editText?.text.toString().isBlank()) 0
+                    else textInputLayout.editText?.text.toString().toInt()
+                totalPoints += value
+                textInputLayout.suffixText = " = ${prefix.plus(value)}"
+            }
+        }
+        binding.originCharacteristicsPoints.text =
+            getString(R.string.restant_char_points, totalPoints, 60)
+    }
+
+    private fun throwDices() {
+        for (textInputLayout in binding.originCharLayout.children) {
+            if (textInputLayout is TextInputLayout) {
+                val finalValue: String = when (textInputLayout.hint.toString()) {
+                    getString(binding.world!!.characteristicModifiers.positiveFirst.id) -> {
+                        val dices = Dice.throwIdN(3, 10)
+                        "${dices.sum() - dices.min()!!}"
+                    }
+                    getString(binding.world!!.characteristicModifiers.positiveSecond.id) -> {
+                        val dices = Dice.throwIdN(3, 10)
+                        "${dices.sum() - dices.min()!!}"
+                    }
+                    getString(binding.world!!.characteristicModifiers.negative.id) -> {
+                        val dices = Dice.throwIdN(3, 10)
+                        "${dices.sum() - dices.max()!!}"
+                    }
+                    else -> {
+                        "${Dice.throwIdN(2, 10).sum()}"
+                    }
+                }
+                textInputLayout.editText?.text = getEditable(finalValue)
+            }
+        }
     }
 
     private fun setRandomWounds() {
-        val result: Int = Dice.throw1dN(world.wounds.diceSides)
+        val result: Int = Dice.throw1dN(binding.world!!.wounds.diceSides)
         binding.originWoundsInput.text = Editable.Factory.getInstance().newEditable("$result")
-        binding.originWoundsInputLayout.suffixText = "= ${world.wounds.modifier + result}"
+
+    }
+
+    fun updateTotalWoundsSuffix() {
+        val result: Int = if (binding.originWoundsInput.text.toString().isEmpty()) 0
+        else binding.originWoundsInput.text.toString().toInt()
+        binding.originWoundsInputLayout.suffixText = "= ${binding.world!!.wounds.modifier + result}"
     }
 
     private fun showHideRandomCharacteristics() {
@@ -54,12 +118,32 @@ class OriginFragment : Fragment() {
         binding.originCharacteristicsDice.visibility = if (random) View.VISIBLE else View.INVISIBLE
         binding.originCharacteristicsPoints.visibility =
             if (!random) View.VISIBLE else View.INVISIBLE
-        updateCharacteristicsInputs()
+        charBaseValue = if (random) 20 else 25
+        updateCharacteristicsInputs(random)
     }
 
-    private fun updateCharacteristicsInputs() {
-
+    private fun updateCharacteristicsInputs(isRandom: Boolean) {
+        for (textInputLayout in binding.originCharLayout.children) {
+            if (textInputLayout is TextInputLayout) {
+                textInputLayout.prefixText = if (isRandom) {
+                    getEditable("$charBaseValue + ")
+                } else {
+                    when (textInputLayout.hint.toString()) {
+                        getString(binding.world!!.characteristicModifiers.positiveFirst.id) ->
+                            getEditable("${charBaseValue.plus(5)} + ")
+                        getString(binding.world!!.characteristicModifiers.positiveSecond.id) ->
+                            getEditable("${charBaseValue.plus(5)} + ")
+                        getString(binding.world!!.characteristicModifiers.negative.id) ->
+                            getEditable("${charBaseValue.minus(5)} + ")
+                        else -> getEditable("$charBaseValue + ")
+                    }
+                }
+            }
+        }
     }
+
+    private fun getEditable(text: String) =
+        Editable.Factory.getInstance().newEditable(text)
 
     private fun genOriginByLuck() {
         val dice: Int = Dice.throw1dN(100)
@@ -70,6 +154,8 @@ class OriginFragment : Fragment() {
                 break
             }
         }
+        reloadDataHomeworld()
+        showHideRandomCharacteristics()
     }
 
     private fun openDialogHomeworldInfo() {
@@ -93,15 +179,15 @@ class OriginFragment : Fragment() {
         return 0
     }
 
-    fun showInfo() {
-        if (binding.originSelectWorldAutocomplete.text.toString().isNotEmpty()) {
-            binding.originLayout.visibility = View.VISIBLE
-            reloadDataHomeworld()
-        }
-    }
-
     private fun reloadDataHomeworld() {
         val position: Int = items.indexOf(binding.originSelectWorldAutocomplete.text.toString())
-        world = Homeworld.worlds[position]
+        binding.world = Homeworld.worlds[position]
+        updateCharacteristicsInputs(binding.originRandomCharacteristics.isChecked)
+    }
+
+    fun showInfo() {
+        if (binding.originSelectWorldAutocomplete.text.toString().isNotEmpty()) {
+            reloadDataHomeworld()
+        }
     }
 }

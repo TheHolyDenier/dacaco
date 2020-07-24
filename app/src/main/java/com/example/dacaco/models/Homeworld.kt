@@ -1,11 +1,7 @@
 package com.example.dacaco.models
 
-import android.content.res.Resources
 import com.example.dacaco.R
-import com.example.dacaco.utils.Aptitude
-import com.example.dacaco.utils.Background
-import com.example.dacaco.utils.Characteristic
-import com.example.dacaco.utils.Dice
+import com.example.dacaco.utils.*
 
 class Homeworld(
     val title: Int,
@@ -44,7 +40,12 @@ class Homeworld(
                 Characteristic.INTELLIGENCE, Characteristic.TOUGHNESS, Characteristic.FELLOWSHIP
             ),
             FateThreshold(3, 8),
-            HomeworldBonus(R.string.omnissiahs_chosen_title, R.string.omnissiahs_chosen_summary),
+            HomeworldBonus(
+                R.string.omnissiahs_chosen_title,
+                R.string.omnissiahs_chosen_summary,
+                true,
+                Pair(Talent.TECHNICAL_KNOCK, Talent.WEAPON_TECH)
+            ),
             Aptitude.INTELLIGENCE,
             Dice(1, 5, 8),
             listOf(
@@ -118,7 +119,12 @@ class Homeworld(
                 Characteristic.INTELLIGENCE, Characteristic.WILLPOWER, Characteristic.STRENGTH
             ),
             FateThreshold(3, 5),
-            HomeworldBonus(R.string.child_of_the_dark_title, R.string.child_of_the_dark_summary),
+            HomeworldBonus(
+                R.string.child_of_the_dark_title,
+                R.string.child_of_the_dark_summary,
+                true,
+                Pair(Talent.STRONG_MINDED, Talent.STRONG_MINDED)
+            ),
             Aptitude.INTELLIGENCE,
             Dice(1, 5, 7),
             listOf(
