@@ -14,6 +14,7 @@ import com.example.dacaco.databinding.FragmentOriginBinding
 import com.example.dacaco.models.Homeworld
 import com.example.dacaco.utils.CharacterSingleton
 import com.example.dacaco.utils.Dice
+import com.example.dacaco.utils.Talents
 import com.example.dacaco.views.OriginDialogFragment
 import com.example.dacaco.views.creation.fragments.listeners.OriginTextWatcher
 import com.google.android.material.textfield.TextInputLayout
@@ -41,6 +42,7 @@ class OriginFragment : Fragment() {
         items = Homeworld.worlds.map { resources.getString(it.title) }
         val adapter = ArrayAdapter(requireContext(), R.layout.item_list, items)
         binding.originSelectWorldAutocomplete.setAdapter(adapter)
+
         binding.originSelectWorldDice.setOnClickListener { genOriginByLuck() }
         binding.originSelectWorldInfo.setOnClickListener { openDialogHomeworldInfo() }
         binding.originRandomCharacteristics.setOnClickListener { showHideRandomCharacteristics() }
@@ -204,6 +206,35 @@ class OriginFragment : Fragment() {
         val position: Int = items.indexOf(binding.originSelectWorldAutocomplete.text.toString())
         binding.world = Homeworld.worlds[position]
         updateCharacteristicsInputs(binding.originRandomCharacteristics.isChecked)
+        CharacterSingleton.character?.aptitudes = arrayOf(binding.world?.aptitudes!!)
+        if (binding.world?.bonus?.choseBetween!!) {
+            setAptitudeHomeworldBonus()
+        }
+    }
+
+    private fun setAptitudeHomeworldBonus() {
+        val talentsOne: Talents? = binding.world?.bonus?.talentsOne
+        if (talentsOne != null) {
+            binding.originHomeWorldBonusChooseFirstBtn.text = getString(talentsOne.id)
+        } else {
+            binding.originHomeWorldBonusChooseFirstBtn.visibility = View.GONE
+        }
+        val talentsTwo: Talents? = binding.world?.bonus?.talentsTwo
+        if (talentsTwo != null) {
+            binding.originHomeWorldBonusChooseSecondBtn.text = getString(talentsTwo.id)
+        } else {
+            binding.originHomeWorldBonusChooseSecondBtn.visibility = View.GONE
+        }
+        binding.originHomeWorldBonusChooseGroup.check(binding.originHomeWorldBonusChooseFirstBtn.id)
+        binding.originHomeWorldBonusChooseGroup.addOnButtonCheckedListener { _, id, _ ->
+            CharacterSingleton.character?.talents = arrayOf(
+                if (binding.originHomeWorldBonusChooseFirstBtn.id == id) {
+                    talentsOne!!
+                } else {
+                    talentsTwo!!
+                }
+            )
+        }
     }
 
     fun showInfo() {

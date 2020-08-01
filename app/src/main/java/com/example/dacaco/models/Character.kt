@@ -1,7 +1,8 @@
 package com.example.dacaco.models
 
-import com.example.dacaco.utils.Aptitude
+import com.example.dacaco.utils.Aptitudes
 import com.example.dacaco.utils.Char
+import com.example.dacaco.utils.Talents
 
 class Character(var name: String) {
     var homeworld: String = ""
@@ -20,5 +21,6 @@ class Character(var name: String) {
     )
     var wounds: Int = 0
     var fateThreshold: Int = 0
-    var aptitudes: Array<Aptitude> = arrayOf()
+    var aptitudes: Array<Aptitudes> = arrayOf()
+    var talents: Array<Talents> = arrayOf()
 }

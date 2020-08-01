@@ -3,15 +3,13 @@ package com.example.dacaco.views
 import android.app.ActionBar
 import android.app.Dialog
 import android.os.Bundle
-import android.text.Layout
 import android.view.*
 import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.dacaco.R
 import com.example.dacaco.models.Homeworld
-import com.example.dacaco.utils.Background
+import com.example.dacaco.utils.Backgrounds
 
 
 class OriginDialogFragment : DialogFragment() {
@@ -70,12 +68,12 @@ class OriginDialogFragment : DialogFragment() {
             mHomeworldBonus = view.findViewById(R.id.dialog_homeworld_bonus)
             mHomeworldBonus.text = resources.getString(
                 R.string.homeworld_bonus_values,
-                resources.getString(homeworld.homeworldBonus.title),
-                resources.getString(homeworld.homeworldBonus.summary)
+                resources.getString(homeworld.bonus.title),
+                resources.getString(homeworld.bonus.summary)
             )
 
             mAptitude = view.findViewById(R.id.dialog_aptitude)
-            mAptitude.text = resources.getString(homeworld.aptitude.id)
+            mAptitude.text = resources.getString(homeworld.aptitudes.id)
 
             mWounds = view.findViewById(R.id.dialog_wounds)
             mWounds.text = resources.getString(
@@ -99,7 +97,7 @@ class OriginDialogFragment : DialogFragment() {
 
     }
 
-    private fun getBackgrounds(backgrounds: List<Background>): CharSequence? {
+    private fun getBackgrounds(backgrounds: List<Backgrounds>): CharSequence? {
         var text = ""
         for ((index, background) in backgrounds.withIndex()) {
             text += resources.getString(background.id)

@@ -9,10 +9,10 @@ class Homeworld(
     val luck: Int,
     val characteristicModifiers: CharacteristicModifiers,
     val fateThreshold: FateThreshold,
-    val homeworldBonus: HomeworldBonus,
-    val aptitude: Aptitude,
+    val bonus: Bonus,
+    val aptitudes: Aptitudes,
     val wounds: Dice,
-    val backgrounds: List<Background>
+    val backgrounds: List<Backgrounds>
 ) {
     companion object {
         private val FeralWorld = Homeworld(
@@ -24,14 +24,14 @@ class Homeworld(
                 Char.INFLUENCE
             ),
             FateThreshold(2, 3),
-            HomeworldBonus(R.string.the_old_ways_title, R.string.the_old_ways_summary),
-            Aptitude.TOUGHNESS,
+            Bonus(R.string.the_old_ways_title, R.string.the_old_ways_summary),
+            Aptitudes.TOUGHNESS,
             Dice(1, 5, 9),
             listOf(
-                Background.ADEPTUS_ARBITES,
-                Background.ADEPTUS_ASTRA_TELEPATHICA,
-                Background.IMPERIAL_GUARD,
-                Background.OUTCAST
+                Backgrounds.ADEPTUS_ARBITES,
+                Backgrounds.ADEPTUS_ASTRA_TELEPATHICA,
+                Backgrounds.IMPERIAL_GUARD,
+                Backgrounds.OUTCAST
             )
         )
         private val ForgeWorld = Homeworld(
@@ -41,19 +41,20 @@ class Homeworld(
                 Char.INTELLIGENCE, Char.TOUGHNESS, Char.FELLOWSHIP
             ),
             FateThreshold(3, 8),
-            HomeworldBonus(
+            Bonus(
                 R.string.omnissiahs_chosen_title,
                 R.string.omnissiahs_chosen_summary,
                 true,
-                Pair(Talent.TECHNICAL_KNOCK, Talent.WEAPON_TECH)
+                Talents.TECHNICAL_KNOCK,
+                Talents.WEAPON_TECH
             ),
-            Aptitude.INTELLIGENCE,
+            Aptitudes.INTELLIGENCE,
             Dice(1, 5, 8),
             listOf(
-                Background.ADEPTUS_ADMINISTRATUM,
-                Background.ADEPTUS_ARBITES,
-                Background.ADEPTUS_MECHANICUS,
-                Background.IMPERIAL_GUARD
+                Backgrounds.ADEPTUS_ADMINISTRATUM,
+                Backgrounds.ADEPTUS_ARBITES,
+                Backgrounds.ADEPTUS_MECHANICUS,
+                Backgrounds.IMPERIAL_GUARD
             )
         )
 
@@ -66,14 +67,14 @@ class Homeworld(
                 Char.TOUGHNESS
             ),
             FateThreshold(4, 10),
-            HomeworldBonus(R.string.breeding_counts_title, R.string.breeding_counts_summary),
-            Aptitude.FELLOWSHIP,
+            Bonus(R.string.breeding_counts_title, R.string.breeding_counts_summary),
+            Aptitudes.FELLOWSHIP,
             Dice(1, 5, 9),
             listOf(
-                Background.ADEPTUS_ADMINISTRATUM,
-                Background.ADEPTUS_ARBITES,
-                Background.ADEPTUS_ASTRA_TELEPATHICA,
-                Background.ADEPTUS_MINISTORUM
+                Backgrounds.ADEPTUS_ADMINISTRATUM,
+                Backgrounds.ADEPTUS_ARBITES,
+                Backgrounds.ADEPTUS_ASTRA_TELEPATHICA,
+                Backgrounds.ADEPTUS_MINISTORUM
             )
         )
 
@@ -84,14 +85,14 @@ class Homeworld(
                 Char.AGILITY, Char.PERCEPTION, Char.WILLPOWER
             ),
             FateThreshold(2, 6),
-            HomeworldBonus(R.string.teeming_masses_title, R.string.teeming_masses_summary),
-            Aptitude.PERCEPTION,
+            Bonus(R.string.teeming_masses_title, R.string.teeming_masses_summary),
+            Aptitudes.PERCEPTION,
             Dice(1, 5, 8),
             listOf(
-                Background.ADEPTUS_ARBITES,
-                Background.ADEPTUS_MECHANICUS,
-                Background.IMPERIAL_GUARD,
-                Background.OUTCAST
+                Backgrounds.ADEPTUS_ARBITES,
+                Backgrounds.ADEPTUS_MECHANICUS,
+                Backgrounds.IMPERIAL_GUARD,
+                Backgrounds.OUTCAST
             )
         )
 
@@ -102,14 +103,14 @@ class Homeworld(
                 Char.FELLOWSHIP, Char.WILLPOWER, Char.PERCEPTION
             ),
             FateThreshold(3, 6),
-            HomeworldBonus(R.string.faith_in_the_creed_title, R.string.faith_in_the_creed_summary),
-            Aptitude.WILLPOWER,
+            Bonus(R.string.faith_in_the_creed_title, R.string.faith_in_the_creed_summary),
+            Aptitudes.WILLPOWER,
             Dice(1, 5, 7),
             listOf(
-                Background.ADEPTUS_ADMINISTRATUM,
-                Background.ADEPTUS_ARBITES,
-                Background.ADEPTUS_MINISTORUM,
-                Background.IMPERIAL_GUARD
+                Backgrounds.ADEPTUS_ADMINISTRATUM,
+                Backgrounds.ADEPTUS_ARBITES,
+                Backgrounds.ADEPTUS_MINISTORUM,
+                Backgrounds.IMPERIAL_GUARD
             )
         )
 
@@ -120,19 +121,19 @@ class Homeworld(
                 Char.INTELLIGENCE, Char.WILLPOWER, Char.STRENGTH
             ),
             FateThreshold(3, 5),
-            HomeworldBonus(
+            Bonus(
                 R.string.child_of_the_dark_title,
                 R.string.child_of_the_dark_summary,
                 true,
-                Pair(Talent.STRONG_MINDED, Talent.STRONG_MINDED)
+                Talents.STRONG_MINDED
             ),
-            Aptitude.INTELLIGENCE,
+            Aptitudes.INTELLIGENCE,
             Dice(1, 5, 7),
             listOf(
-                Background.ADEPTUS_ASTRA_TELEPATHICA,
-                Background.ADEPTUS_MECHANICUS,
-                Background.ADEPTUS_MINISTORUM,
-                Background.OUTCAST
+                Backgrounds.ADEPTUS_ASTRA_TELEPATHICA,
+                Backgrounds.ADEPTUS_MECHANICUS,
+                Backgrounds.ADEPTUS_MINISTORUM,
+                Backgrounds.OUTCAST
             )
         )
 
