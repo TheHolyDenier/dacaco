@@ -1,9 +1,9 @@
 package com.example.dacaco.models
 
-import com.example.dacaco.utils.Characteristic
+import com.example.dacaco.utils.Char
 
 class CharacteristicModifiers(
-    val positiveFirst: Characteristic,
-    val positiveSecond: Characteristic,
-    val negative: Characteristic
+    val positiveFirst: Char,
+    val positiveSecond: Char,
+    val negative: Char
 )

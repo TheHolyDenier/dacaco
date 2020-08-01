@@ -2,7 +2,7 @@ package com.example.dacaco.utils
 
 import com.example.dacaco.R
 
-enum class Characteristic(val id: Int) {
+enum class Char(val id: Int) {
     WEAPON_SKILL(R.string.weapon_skill),
     BALLISTIC_SKILL(R.string.ballistic_skill),
     STRENGTH(R.string.strength),

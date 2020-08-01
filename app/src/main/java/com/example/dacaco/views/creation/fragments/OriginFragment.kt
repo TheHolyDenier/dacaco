@@ -12,9 +12,10 @@ import androidx.fragment.app.Fragment
 import com.example.dacaco.R
 import com.example.dacaco.databinding.FragmentOriginBinding
 import com.example.dacaco.models.Homeworld
+import com.example.dacaco.utils.CharacterSingleton
 import com.example.dacaco.utils.Dice
 import com.example.dacaco.views.OriginDialogFragment
-import com.example.dacaco.views.creation.fragments.listeners.HomeworldTextWatcher
+import com.example.dacaco.views.creation.fragments.listeners.OriginTextWatcher
 import com.google.android.material.textfield.TextInputLayout
 
 
@@ -45,23 +46,38 @@ class OriginFragment : Fragment() {
         binding.originRandomCharacteristics.setOnClickListener { showHideRandomCharacteristics() }
         binding.originWoundsDice.setOnClickListener { setRandomWounds() }
         binding.originCharacteristicsDice.setOnClickListener { throwDices() }
-        binding.originSelectWorldAutocomplete.addTextChangedListener(HomeworldTextWatcher(this))
-        binding.originWoundsInput.addTextChangedListener(HomeworldTextWatcher(this))
+        binding.originSelectWorldAutocomplete.addTextChangedListener(OriginTextWatcher(this))
+        binding.originWoundsInput.addTextChangedListener(OriginTextWatcher(this))
+        binding.originFateThresholdDice.setOnClickListener { throwFateThresholdDice() }
+        binding.originFateThresholdSwitch.setOnCheckedChangeListener { _, _ -> updateFateThreshold() }
 
         setTextWatchCharacters()
+    }
+
+    fun updateFateThreshold() {
+        CharacterSingleton.character?.fateThreshold =
+            binding.world?.fateThreshold?.fate?.plus(
+                if (binding.originFateThresholdSwitch.isChecked) 1
+                else 0
+            )!!
+    }
+
+    private fun throwFateThresholdDice() {
+        binding.originFateThresholdSwitch.isChecked =
+            Dice.throw1dN(10) >= binding.world?.fateThreshold?.difficult!!
     }
 
     private fun setTextWatchCharacters() {
         for (textInputLayout in binding.originCharLayout.children) {
             if (textInputLayout is TextInputLayout) {
-                textInputLayout.editText?.addTextChangedListener(HomeworldTextWatcher(this))
-
+                textInputLayout.editText?.addTextChangedListener(OriginTextWatcher(this))
             }
         }
     }
 
     fun updateSuffix() {
         var totalPoints = 0
+        var i = 0
         for (textInputLayout in binding.originCharLayout.children) {
             if (textInputLayout is TextInputLayout) {
                 val prefix = textInputLayout.prefixText.toString().split(' ')[0].toInt()
@@ -69,8 +85,11 @@ class OriginFragment : Fragment() {
                     if (textInputLayout.editText?.text.toString().isBlank()) 0
                     else textInputLayout.editText?.text.toString().toInt()
                 totalPoints += value
-                textInputLayout.suffixText = " = ${prefix.plus(value)}"
+                val valueTotal = prefix.plus(value)
+                textInputLayout.suffixText = " = $valueTotal"
+                CharacterSingleton.character?.characteristics?.get(i)?.value = valueTotal
             }
+            i++
         }
         binding.originCharacteristicsPoints.text =
             getString(R.string.restant_char_points, totalPoints, 60)
@@ -110,7 +129,9 @@ class OriginFragment : Fragment() {
     fun updateTotalWoundsSuffix() {
         val result: Int = if (binding.originWoundsInput.text.toString().isEmpty()) 0
         else binding.originWoundsInput.text.toString().toInt()
-        binding.originWoundsInputLayout.suffixText = "= ${binding.world!!.wounds.modifier + result}"
+        val totalWounds = binding.world!!.wounds.modifier + result
+        binding.originWoundsInputLayout.suffixText = "= $totalWounds"
+        CharacterSingleton.character?.wounds = totalWounds
     }
 
     private fun showHideRandomCharacteristics() {

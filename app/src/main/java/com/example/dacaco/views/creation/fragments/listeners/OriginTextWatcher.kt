@@ -4,7 +4,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import com.example.dacaco.views.creation.fragments.OriginFragment
 
-class HomeworldTextWatcher(private val fragment: OriginFragment) : TextWatcher {
+class OriginTextWatcher(private val fragment: OriginFragment) : TextWatcher {
     override fun afterTextChanged(p0: Editable?) {
     }
 
@@ -15,5 +15,6 @@ class HomeworldTextWatcher(private val fragment: OriginFragment) : TextWatcher {
         fragment.showInfo()
         fragment.updateSuffix()
         fragment.updateTotalWoundsSuffix()
+        fragment.updateFateThreshold()
     }
 }

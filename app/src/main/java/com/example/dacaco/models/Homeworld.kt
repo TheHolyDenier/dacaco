@@ -2,6 +2,7 @@ package com.example.dacaco.models
 
 import com.example.dacaco.R
 import com.example.dacaco.utils.*
+import com.example.dacaco.utils.Char
 
 class Homeworld(
     val title: Int,
@@ -18,9 +19,9 @@ class Homeworld(
             R.string.feral_world,
             15,
             CharacteristicModifiers(
-                Characteristic.STRENGTH,
-                Characteristic.TOUGHNESS,
-                Characteristic.INFLUENCE
+                Char.STRENGTH,
+                Char.TOUGHNESS,
+                Char.INFLUENCE
             ),
             FateThreshold(2, 3),
             HomeworldBonus(R.string.the_old_ways_title, R.string.the_old_ways_summary),
@@ -37,7 +38,7 @@ class Homeworld(
             R.string.forge_world,
             33,
             CharacteristicModifiers(
-                Characteristic.INTELLIGENCE, Characteristic.TOUGHNESS, Characteristic.FELLOWSHIP
+                Char.INTELLIGENCE, Char.TOUGHNESS, Char.FELLOWSHIP
             ),
             FateThreshold(3, 8),
             HomeworldBonus(
@@ -60,9 +61,9 @@ class Homeworld(
             R.string.highborn,
             44,
             CharacteristicModifiers(
-                Characteristic.FELLOWSHIP,
-                Characteristic.INFLUENCE,
-                Characteristic.TOUGHNESS
+                Char.FELLOWSHIP,
+                Char.INFLUENCE,
+                Char.TOUGHNESS
             ),
             FateThreshold(4, 10),
             HomeworldBonus(R.string.breeding_counts_title, R.string.breeding_counts_summary),
@@ -80,7 +81,7 @@ class Homeworld(
             R.string.hive_world,
             69,
             CharacteristicModifiers(
-                Characteristic.AGILITY, Characteristic.PERCEPTION, Characteristic.WILLPOWER
+                Char.AGILITY, Char.PERCEPTION, Char.WILLPOWER
             ),
             FateThreshold(2, 6),
             HomeworldBonus(R.string.teeming_masses_title, R.string.teeming_masses_summary),
@@ -98,7 +99,7 @@ class Homeworld(
             R.string.shrine_world,
             85,
             CharacteristicModifiers(
-                Characteristic.FELLOWSHIP, Characteristic.WILLPOWER, Characteristic.PERCEPTION
+                Char.FELLOWSHIP, Char.WILLPOWER, Char.PERCEPTION
             ),
             FateThreshold(3, 6),
             HomeworldBonus(R.string.faith_in_the_creed_title, R.string.faith_in_the_creed_summary),
@@ -116,7 +117,7 @@ class Homeworld(
             R.string.voidborn,
             100,
             CharacteristicModifiers(
-                Characteristic.INTELLIGENCE, Characteristic.WILLPOWER, Characteristic.STRENGTH
+                Char.INTELLIGENCE, Char.WILLPOWER, Char.STRENGTH
             ),
             FateThreshold(3, 5),
             HomeworldBonus(

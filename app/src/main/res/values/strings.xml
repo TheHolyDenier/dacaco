@@ -70,4 +70,11 @@
     <string name="strong_minded">Imperturbable</string>
     <string name="technical_knock">Toque mecánico</string>
     <string name="weapon_tech">Arma tecnológica</string>
+
+    <!--    DIALOG -->
+    <string name="ok">OK</string>
+    <string name="cancel">CANCELAR</string>
+    <string name="chose_name">Escoge un nombre:</string>
+    <string name="error_input">Este campo es obligatorio</string>
+    <string name="edit_name">Editar nombre</string>
 </resources>
