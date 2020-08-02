@@ -7,7 +7,7 @@ import com.example.dacaco.utils.Skills
 import com.example.dacaco.utils.Talents
 
 class Background(
-    val name: Backgrounds,
+    val title: Backgrounds,
     val betweenSkills: Array<Pair<Skills, Skills>>,
     val skills: Array<Skills>,
     val talents: Array<Talents>,

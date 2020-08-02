@@ -1,6 +1,6 @@
 package com.example.dacaco.views.creation
 
-import BackgroundFragment
+import com.example.dacaco.views.creation.fragments.BackgroundFragment
 import android.content.Context
 import android.os.Bundle
 import android.view.Menu

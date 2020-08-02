@@ -4,9 +4,8 @@ import com.example.dacaco.utils.Aptitudes
 import com.example.dacaco.utils.Char
 import com.example.dacaco.utils.Talents
 
-class Character(var name: String = "") {
+class FirstStep {
     var homeworld: String = ""
-    var background: String = ""
     var characteristics: Array<Characteristic> = arrayOf(
         Characteristic(Char.WEAPON_SKILL),
         Characteristic(Char.BALLISTIC_SKILL),

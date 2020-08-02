@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.dacaco.R
 import com.example.dacaco.databinding.FragmentOriginBinding
+import com.example.dacaco.models.FirstStep
 import com.example.dacaco.models.Homeworld
 import com.example.dacaco.utils.CharacterSingleton
 import com.example.dacaco.utils.Dice
@@ -57,7 +58,7 @@ class OriginFragment : Fragment() {
     }
 
     fun updateFateThreshold() {
-        CharacterSingleton.character?.fateThreshold =
+        CharacterSingleton.firstStep.fateThreshold =
             binding.world?.fateThreshold?.fate?.plus(
                 if (binding.originFateThresholdSwitch.isChecked) 1
                 else 0
@@ -89,7 +90,7 @@ class OriginFragment : Fragment() {
                 totalPoints += value
                 val valueTotal = prefix.plus(value)
                 textInputLayout.suffixText = " = $valueTotal"
-                CharacterSingleton.character?.characteristics?.get(i)?.value = valueTotal
+                CharacterSingleton.firstStep.characteristics[i].value = valueTotal
             }
             i++
         }
@@ -133,7 +134,7 @@ class OriginFragment : Fragment() {
         else binding.originWoundsInput.text.toString().toInt()
         val totalWounds = binding.world!!.wounds.modifier + result
         binding.originWoundsInputLayout.suffixText = "= $totalWounds"
-        CharacterSingleton.character?.wounds = totalWounds
+        CharacterSingleton.firstStep.wounds = totalWounds
     }
 
     private fun showHideRandomCharacteristics() {
@@ -206,13 +207,14 @@ class OriginFragment : Fragment() {
         val position: Int = items.indexOf(binding.originSelectWorldAutocomplete.text.toString())
         binding.world = Homeworld.worlds[position]
         updateCharacteristicsInputs(binding.originRandomCharacteristics.isChecked)
-        CharacterSingleton.character?.aptitudes = arrayOf(binding.world?.aptitudes!!)
+        CharacterSingleton.firstStep.homeworld = getString(Homeworld.worlds[position].title)
+        CharacterSingleton.firstStep.aptitudes = arrayOf(binding.world?.aptitudes!!)
         if (binding.world?.bonus?.choseBetween!!) {
-            setAptitudeHomeworldBonus()
+            setTalentsHomeWorld()
         }
     }
 
-    private fun setAptitudeHomeworldBonus() {
+    private fun setTalentsHomeWorld() {
         val talentsOne: Talents? = binding.world?.bonus?.talentsOne
         if (talentsOne != null) {
             binding.originHomeWorldBonusChooseFirstBtn.text = getString(talentsOne.id)
@@ -227,7 +229,7 @@ class OriginFragment : Fragment() {
         }
         binding.originHomeWorldBonusChooseGroup.check(binding.originHomeWorldBonusChooseFirstBtn.id)
         binding.originHomeWorldBonusChooseGroup.addOnButtonCheckedListener { _, id, _ ->
-            CharacterSingleton.character?.talents = arrayOf(
+            CharacterSingleton.firstStep.talents = arrayOf(
                 if (binding.originHomeWorldBonusChooseFirstBtn.id == id) {
                     talentsOne!!
                 } else {
@@ -238,6 +240,7 @@ class OriginFragment : Fragment() {
     }
 
     fun showInfo() {
+        CharacterSingleton.firstStep = FirstStep()
         if (binding.originSelectWorldAutocomplete.text.toString().isNotEmpty()) {
             reloadDataHomeworld()
         }

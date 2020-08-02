@@ -18,8 +18,10 @@ class DialogCompanion {
             val dialog = Dialog(context)
             val d = DialogCharNameBinding.inflate(layoutInflater)
             dialog.setContentView(d.root)
-            if (CharacterSingleton.character != null) d.nameInput.text =
-                Editable.Factory.getInstance().newEditable(CharacterSingleton.character!!.name)
+            d.nameInput.text = if (CharacterSingleton.character != null)
+                Editable.Factory.getInstance()
+                    .newEditable(CharacterSingleton.character.name) else Editable.Factory.getInstance()
+                .newEditable("Helena")
             d.okBtn.setOnClickListener {
                 if (d.nameInput.text.toString().isNotEmpty()) {
                     CharacterSingleton.character = Character(d.nameInput.text.toString())
@@ -35,17 +37,25 @@ class DialogCompanion {
 
         fun areYouSure(context: Context) {
             val builder = AlertDialog.Builder(context)
-            builder.setMessage("Are you sure?")
-                .setPositiveButton(
-                    context.getString(R.string.ok)
-                ) { dialog, _ ->
-                    EventBus.getDefault().post(MessageType.OK)
-                    dialog.dismiss()
-                }
-                .setNegativeButton(
-                    context.getString(R.string.cancel)
-                ) { dialog, _ -> dialog.dismiss() }
-                .show()
+            with(builder) {
+                setTitle(
+                    context.getString(
+                        R.string.dialog_discard,
+                        CharacterSingleton.character.name
+                    )
+                )
+                setMessage(context.getString(R.string.discard_message))
+                    .setPositiveButton(
+                        context.getString(R.string.ok)
+                    ) { dialog, _ ->
+                        EventBus.getDefault().post(MessageType.OK)
+                        dialog.dismiss()
+                    }
+                    .setNegativeButton(
+                        context.getString(R.string.cancel)
+                    ) { dialog, _ -> dialog.dismiss() }
+                    .show()
+            }
         }
     }
 

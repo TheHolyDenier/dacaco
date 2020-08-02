@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".views.creation.fragments.BackgroundFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="background"
+            type="com.example.dacaco.models.Background" />
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/background" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal"
+            android:layout_marginTop="@dimen/vertical"
+            android:layout_marginEnd="@dimen/horizontal"
+            android:layout_marginBottom="@dimen/vertical"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/DarkHeresyTheme.Title.2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/origin_select_world"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/backgrounds_autocomplete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="none|textNoSuggestions" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/backgrounds_info_btn"
+                    style="@style/DarkHeresyTheme.Button.OutlinedButton.Image"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_weight="0"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_info_black_48dp" />
+
+                <ImageButton
+                    android:id="@+id/bacngrounds_dice_btn"
+                    style="@style/DarkHeresyTheme.Button.OutlinedButton.Image"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_weight="0"
+                    android:src="@drawable/ic_casino_black_48dp" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/DarkHeresyTheme.Title.2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical"
+                android:text="Escoge entre:" />
+
+            <LinearLayout
+                android:id="@+id/layout_chose_between"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical"
+                android:gravity="center"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

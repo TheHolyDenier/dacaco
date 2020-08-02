@@ -143,4 +143,6 @@
     <string name="wt_chain">Sierra</string>
     <string name="never_quit_title">Nunca cede</string>
     <string name="never_quit_description">"Un personaje proscrito suma +2 a su bonificación de Resistencia para el propósito de determinar la Fatiga. "</string>
+    <string name="dialog_discard">"Descartar %1$s"</string>
+    <string name="discard_message">Una vez descartado, no podrá recuperarse. ¿Está seguro?</string>
 </resources>
