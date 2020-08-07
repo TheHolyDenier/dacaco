@@ -5,5 +5,10 @@
         android:id="@+id/edit_name_item"
         android:title="@string/edit_name"
         android:icon="@drawable/ic_edit_black_48dp"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/save_item"
+        android:title="@string/save_character"
+        android:icon="@drawable/ic_save_black_48dp"
+        app:showAsAction="ifRoom"/>
 </menu>

@@ -1,12 +1,12 @@
 package com.example.dacaco.views.creation
 
-import com.example.dacaco.views.creation.fragments.BackgroundFragment
 import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.dacaco.R
@@ -14,6 +14,7 @@ import com.example.dacaco.databinding.ActivityCreationBinding
 import com.example.dacaco.utils.CharacterSingleton
 import com.example.dacaco.utils.DialogCompanion
 import com.example.dacaco.utils.MessageType
+import com.example.dacaco.views.creation.fragments.BackgroundFragment
 import com.example.dacaco.views.creation.fragments.ExperienceFragment
 import com.example.dacaco.views.creation.fragments.OriginFragment
 import com.example.dacaco.views.creation.fragments.RoleFragment
@@ -68,6 +69,11 @@ class CreationActivity : AppCompatActivity() {
         when (item.itemId) {
             android.R.id.home -> DialogCompanion.areYouSure(this)
             R.id.edit_name_item -> DialogCompanion.editName(this, layoutInflater)
+            R.id.save_item -> Toast.makeText(
+                this@CreationActivity,
+                "Estamos trabajando en ello",
+                Toast.LENGTH_SHORT
+            ).show()
             else -> return super.onOptionsItemSelected(item)
         }
         return true
