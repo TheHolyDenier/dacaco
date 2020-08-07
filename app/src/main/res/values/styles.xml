@@ -28,9 +28,19 @@
         <item name="android:textAlignment">center</item>
     </style>
 
-    <style name="DarkHeresyTheme.Title.2" parent="Widget.AppCompat.TextView">
+    <style name="DarkHeresyTheme.Splash.Title" parent="Widget.AppCompat.TextView">
         <item name="android:fontFamily">@font/morpheus_regular</item>
-        <item name="android:textSize">28sp</item>
+        <item name="android:textSize">48sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/platinum</item>
+    </style>
+
+    <style name="DarkHeresyTheme.Subtitle" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/morpheus_regular</item>
+        <item name="android:textSize">180sp</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:maxLines">1</item>
         <item name="android:autoSizeTextType">uniform</item>

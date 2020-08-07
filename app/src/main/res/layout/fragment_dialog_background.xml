@@ -31,7 +31,7 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/DarkHeresyTheme.Title.2"
+                style="@style/DarkHeresyTheme.Subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/skills" />
@@ -50,7 +50,7 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/DarkHeresyTheme.Title.2"
+                style="@style/DarkHeresyTheme.Subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/talents" />
@@ -62,7 +62,7 @@
         </LinearLayout>
 
         <TextView
-            style="@style/DarkHeresyTheme.Title.2"
+            style="@style/DarkHeresyTheme.Subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/vertical"
@@ -80,7 +80,7 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/DarkHeresyTheme.Title.2"
+                style="@style/DarkHeresyTheme.Subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/aptitudes" />
@@ -99,7 +99,7 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/DarkHeresyTheme.Title.2"
+                style="@style/DarkHeresyTheme.Subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/other" />

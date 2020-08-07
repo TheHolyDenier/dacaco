@@ -6,8 +6,31 @@
     android:background="@android:color/black"
     tools:context=".views.SplashActivity">
 
-    <ImageView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/logo" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo" />
+
+        <TextView
+            style="@style/DarkHeresyTheme.Splash.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="Dark heresy" />
+
+        <TextView
+            style="@style/DarkHeresyTheme.Splash.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal"
+            android:textAllCaps="false"
+            android:layout_marginTop="160dp"
+            android:layout_marginEnd="@dimen/horizontal"
+            android:text="character companion" />
+    </FrameLayout>
 </LinearLayout>
