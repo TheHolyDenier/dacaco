@@ -20,13 +20,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/creation_app_bar"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_bar"
                 android:background="@color/platinum" />
+
 
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

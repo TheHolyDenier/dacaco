@@ -71,7 +71,7 @@ class CreationActivity : AppCompatActivity() {
             R.id.edit_name_item -> DialogCompanion.editName(this, layoutInflater)
             R.id.save_item -> Toast.makeText(
                 this@CreationActivity,
-                "Estamos trabajando en ello",
+                getString(R.string.WIP),
                 Toast.LENGTH_SHORT
             ).show()
             else -> return super.onOptionsItemSelected(item)

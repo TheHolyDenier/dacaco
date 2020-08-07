@@ -9,19 +9,25 @@ import kotlinx.coroutines.*
 
 
 class SplashActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        overridePendingTransition(R.anim.fade_out, R.anim.fade_in)
+
         setContentView(R.layout.activity_splash)
 
-        runBlocking { launch { launchActivity() } }
+        GlobalScope.launch {
+            launchActivity()
+        }
     }
 
-    private suspend fun launchActivity() = withContext(Dispatchers.Default) {
-        delay(1000)
-        val intent = Intent(this@SplashActivity, MainActivity::class.java)
-        intent.flags = FLAG_ACTIVITY_CLEAR_TASK
-        startActivity(intent)
-//        finish()
 
+    private suspend fun launchActivity() = withContext(Dispatchers.Default) {
+        delay(3000)
+        val intent = Intent(this@SplashActivity, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 }
