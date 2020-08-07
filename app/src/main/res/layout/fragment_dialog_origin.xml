@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/vertical"
     android:paddingEnd="@dimen/horizontal"
     android:paddingBottom="@dimen/vertical"
-    tools:context=".views.OriginDialogFragment">
+    tools:context=".views.creation.dialogs.OriginDialogFragment">
 
     <TextView
         android:id="@+id/dialog_title"
@@ -117,6 +117,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/vertical"
         android:layout_marginBottom="@dimen/vertical"
-        android:text="Vale" />
+        android:text="@string/ok" />
 
 </LinearLayout>

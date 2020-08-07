@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".views.creation.dialogs.BackgroundDialogFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/horizontal"
+        android:layout_marginTop="@dimen/vertical"
+        android:layout_marginEnd="@dimen/horizontal"
+        android:minWidth="280dp"
+        android:layout_marginBottom="@dimen/vertical"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/horizontal"
+        android:paddingTop="@dimen/vertical"
+        android:paddingEnd="@dimen/horizontal"
+        android:paddingBottom="@dimen/vertical">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/DarkHeresyTheme.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/skills_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/DarkHeresyTheme.Title.2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/skills" />
+
+            <TextView
+                android:id="@+id/skills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/talents_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/DarkHeresyTheme.Title.2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/talents" />
+
+            <TextView
+                android:id="@+id/talents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/DarkHeresyTheme.Title.2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical"
+            android:text="@string/bonus" />
+
+        <TextView
+            android:id="@+id/bonus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/DarkHeresyTheme.Title.2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/aptitudes" />
+
+            <TextView
+                android:id="@+id/aptitudes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/other_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/DarkHeresyTheme.Title.2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/other" />
+
+            <TextView
+                android:id="@+id/other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical"
+            android:layout_marginBottom="@dimen/vertical"
+            android:text="@string/ok" />
+    </LinearLayout>
+
+</layout>

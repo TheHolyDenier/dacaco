@@ -6,7 +6,7 @@ import com.example.dacaco.utils.Talents
 
 class FirstStep {
     var homeworld: String = ""
-    var characteristics: Array<Characteristic> = arrayOf(
+    var characteristics: ArrayList<Characteristic> = arrayListOf(
         Characteristic(Char.WEAPON_SKILL),
         Characteristic(Char.BALLISTIC_SKILL),
         Characteristic(Char.STRENGTH),
@@ -20,6 +20,7 @@ class FirstStep {
     )
     var wounds: Int = 0
     var fateThreshold: Int = 0
-    var aptitudes: Array<Aptitudes> = arrayOf()
-    var talents: Array<Talents> = arrayOf()
+    var aptitudes: ArrayList<Aptitudes> = arrayListOf()
+    var talents: ArrayList<Talents> = arrayListOf()
+
 }

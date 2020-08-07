@@ -16,7 +16,7 @@ import com.example.dacaco.models.Homeworld
 import com.example.dacaco.utils.CharacterSingleton
 import com.example.dacaco.utils.Dice
 import com.example.dacaco.utils.Talents
-import com.example.dacaco.views.OriginDialogFragment
+import com.example.dacaco.views.creation.dialogs.OriginDialogFragment
 import com.example.dacaco.views.creation.fragments.listeners.OriginTextWatcher
 import com.google.android.material.textfield.TextInputLayout
 
@@ -183,14 +183,15 @@ class OriginFragment : Fragment() {
     }
 
     private fun openDialogHomeworldInfo() {
-        val fragmentManager = childFragmentManager
-        val f = OriginDialogFragment()
-        val args = Bundle()
-        args.putInt("index", getOriginIndex())
-        f.arguments = args
+        if (binding.originSelectWorldAutocomplete.text.toString().isNotEmpty()) {
+            val fragmentManager = childFragmentManager
+            val f = OriginDialogFragment()
+            val args = Bundle()
+            args.putInt("index", getOriginIndex())
+            f.arguments = args
 
-        f.show(fragmentManager, "dialog")
-
+            f.show(fragmentManager, "dialog")
+        }
     }
 
     private fun getOriginIndex(): Int {
@@ -208,7 +209,7 @@ class OriginFragment : Fragment() {
         binding.world = Homeworld.worlds[position]
         updateCharacteristicsInputs(binding.originRandomCharacteristics.isChecked)
         CharacterSingleton.firstStep.homeworld = getString(Homeworld.worlds[position].title)
-        CharacterSingleton.firstStep.aptitudes = arrayOf(binding.world?.aptitudes!!)
+        CharacterSingleton.firstStep.aptitudes = arrayListOf(binding.world?.aptitudes!!)
         if (binding.world?.bonus?.choseBetween!!) {
             setTalentsHomeWorld()
         }
@@ -229,7 +230,7 @@ class OriginFragment : Fragment() {
         }
         binding.originHomeWorldBonusChooseGroup.check(binding.originHomeWorldBonusChooseFirstBtn.id)
         binding.originHomeWorldBonusChooseGroup.addOnButtonCheckedListener { _, id, _ ->
-            CharacterSingleton.firstStep.talents = arrayOf(
+            CharacterSingleton.firstStep.talents = arrayListOf(
                 if (binding.originHomeWorldBonusChooseFirstBtn.id == id) {
                     talentsOne!!
                 } else {

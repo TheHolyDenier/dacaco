@@ -1,4 +1,4 @@
-package com.example.dacaco.views
+package com.example.dacaco.views.creation.dialogs
 
 import android.app.ActionBar
 import android.app.Dialog

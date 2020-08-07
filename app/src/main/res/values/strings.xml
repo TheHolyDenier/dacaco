@@ -145,4 +145,13 @@
     <string name="never_quit_description">"Un personaje proscrito suma +2 a su bonificación de Resistencia para el propósito de determinar la Fatiga. "</string>
     <string name="dialog_discard">"Descartar %1$s"</string>
     <string name="discard_message">Una vez descartado, no podrá recuperarse. ¿Está seguro?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="skills">Habilidades</string>
+    <string name="talents">Talentos</string>
+    <string name="bonus">Bono</string>
+    <string name="aptitudes">Aptitudes</string>
+    <string name="other">Otro</string>
+    <string name="choose_between_skill">Escoge entre habilidades:</string>
+    <string name="choose_between_talents">Escoge entre talentos:</string>
 </resources>

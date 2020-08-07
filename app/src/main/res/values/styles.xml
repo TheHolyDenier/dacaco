@@ -25,6 +25,7 @@
         <item name="android:textAllCaps">true</item>
         <item name="android:maxLines">1</item>
         <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:textAlignment">center</item>
     </style>
 
     <style name="DarkHeresyTheme.Title.2" parent="Widget.AppCompat.TextView">
@@ -33,6 +34,7 @@
         <item name="android:textAllCaps">true</item>
         <item name="android:maxLines">1</item>
         <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:textAlignment">center</item>
     </style>
 
     <style name="DarkHeresyTheme.Button.OutlinedButton.Image" parent="Widget.MaterialComponents.Button.OutlinedButton">
