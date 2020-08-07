@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
+import com.example.dacaco.R
 import com.example.dacaco.databinding.ActivityMainBinding
 import com.example.dacaco.utils.DialogCompanion
 import com.example.dacaco.utils.MessageType
@@ -22,6 +23,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.creationAppBar)
+        supportActionBar?.title = getString(R.string.app_name)
 
         binding.mainFab.setOnClickListener { DialogCompanion.editName(this, layoutInflater) }
     }

@@ -20,6 +20,8 @@ import com.example.dacaco.views.creation.dialogs.OriginDialogFragment
 import com.example.dacaco.views.creation.fragments.listeners.OriginTextWatcher
 import com.google.android.material.textfield.TextInputLayout
 
+//TODO: Upload from singleton
+//TODO: Allow to change base values
 
 class OriginFragment : Fragment() {
 

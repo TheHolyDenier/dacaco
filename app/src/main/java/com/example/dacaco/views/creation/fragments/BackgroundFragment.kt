@@ -25,6 +25,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
 import java.util.*
 
+//TODO: Upload from singleton
 
 class BackgroundFragment : Fragment() {
     private lateinit var items: List<String>

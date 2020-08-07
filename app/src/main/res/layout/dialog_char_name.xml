@@ -10,10 +10,10 @@
             style="@style/DarkHeresyTheme.Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/chose_name"
             android:layout_marginStart="@dimen/horizontal"
             android:layout_marginTop="@dimen/vertical"
-            android:layout_marginEnd="@dimen/horizontal"/>
+            android:layout_marginEnd="@dimen/horizontal"
+            android:text="@string/chose_name" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -38,6 +38,7 @@
 
             <Button
                 android:id="@+id/cancel_btn"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/horizontal"
@@ -48,6 +49,7 @@
 
             <Button
                 android:id="@+id/ok_btn"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/half_horizontal"
